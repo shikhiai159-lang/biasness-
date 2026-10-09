@@ -1,0 +1,22 @@
+{
+  "name": "ServicePilot — Offline Service Business Manager",
+  "short_name": "ServicePilot",
+  "description": "Offline-first client, job, invoice and expense manager for small service businesses.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f6fa",
+  "theme_color": "#101827",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "business",
+    "productivity"
+  ]
+}
