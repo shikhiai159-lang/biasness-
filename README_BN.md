@@ -23,3 +23,17 @@
 - Minimum Android: 6.0 (API 23)
 - Version: 1.0.0 (debug)
 - No INTERNET permission declared; app loads bundled local files.
+
+## নতুন Services & Profit মডিউল
+- সার্ভিস টেমপ্লেট: নিজের সার্ভিসের নাম, চার্জ, সরাসরি/অন্যান্য খরচ, প্রসেসিং সময় এবং কাস্টম ডকুমেন্ট চেকলিস্ট সংরক্ষণ।
+- Service Cost & Profit Calculator: চার্জ, খরচ, আনুমানিক লাভ ও লাভের হার তাৎক্ষণিক হিসাব।
+- Quotation Generator: নির্বাচিত টেমপ্লেট থেকে কাস্টমারের জন্য কোটেশনের টেক্সট তৈরি; প্রিন্ট ডায়ালগ থেকে PDF হিসেবেও সংরক্ষণ করা যায়।
+- Profit Forecast: মাসিক কাজের সংখ্যা ও প্রতি কাজের চার্জ/খরচ থেকে পূর্বাভাস।
+- Actual vs Estimated: প্রতিটি কাজের আনুমানিক ও প্রকৃত খরচের পার্থক্য।
+- Payment & Pending Work: কাজের স্ট্যাটাস ও পেমেন্ট স্ট্যাটাসের তালিকা।
+- Document checklist: প্রতিটি টেমপ্লেটে নথির স্ট্যাটাস টিক দিয়ে রাখা যায়।
+
+নোট: অ্যাপটি offline-first এবং ডেটা এই ডিভাইসের browser/WebView storage-এ থাকে। নিয়মিত JSON backup নিন। নথির তালিকা ব্যবহারকারী-নির্ধারিত; সরকারি/আইনগতভাবে বাধ্যতামূলক তালিকা নয়। এটি হিসাবের আনুমানিক টুল, ট্যাক্স বা আইনি পরামর্শ নয়।
+
+### যাচাই
+`app/src/main/assets/www/app.js`-এর JavaScript syntax `node --check` দিয়ে যাচাই করা হয়েছে। Android APK তৈরির জন্য Android SDK/Gradle-সহ পরিবেশে `./gradlew assembleDebug` চালান।
