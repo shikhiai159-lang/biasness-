@@ -30,3 +30,11 @@
 ## নতুন মডিউল (Tender Desk + Purchase Bills)
 - Purchase Bills: supplier invoice, item-wise quantity/rate, GST estimate, paid amount and balance due. Original supplier invoice and applicable tax rules যাচাই করুন।
 - Tender Desk: official CPPP/eProcurement/GeM portal links, tender tracker, deadlines and preparation checklist. Actual bid submission remains on the official portal and may require DSC/login/OTP; this offline app cannot submit bids automatically.
+
+## সংশোধন প্যাক (ফাইল আপলোড, ইনভয়েস, টেন্ডার লিংক)
+- Android WebView-এর `onShowFileChooser` যুক্ত করা হয়েছে, যাতে ছবি/JSON ফাইল বাছাই করা যায়।
+- পণ্যের/কাজের ছবি বাছাইয়ের পরে JPEG-এ রিসাইজ ও কমপ্রেস করে লোকাল রেকর্ডে রাখা হয়।
+- বাইরের HTTPS পোর্টালগুলো WebView-এর ভেতরে না খুলে ডিভাইসের ব্রাউজারে খোলে; এতে `ERR_CACHE_MISS`-এর সাধারণ WebView navigation সমস্যা এড়ানোর চেষ্টা করা হয়েছে। নেটওয়ার্ক/পোর্টাল সমস্যা থাকলে ব্রাউজারেও আলাদা ত্রুটি হতে পারে।
+- Sales invoice-এ GST / CGST+SGST / IGST এবং Non-GST নির্বাচন আছে। Sales invoice থেকে বাধ্যতামূলক due date সরানো হয়েছে; unpaid/part-paid হিসাব পেমেন্ট থেকে গণনা হয়।
+- সরকারি eProcurement-এ বিড সরাসরি অ্যাপ থেকে জমা দেওয়ার ভান করা হয় না। পোর্টালে লগইন, bidder enrolment এবং প্রযোজ্য ক্ষেত্রে DSC/e-token দরকার; অ্যাপ অফিসিয়াল পোর্টাল খুলে দেয় এবং আলাদা tender tracker/checklist দেয়।
+- সোর্স কোডের JavaScript syntax ও ZIP integrity পরীক্ষা করা হয়েছে; পূর্ণ Android APK build/device test এখনও করা হয়নি। GST নথির আইনি বৈধতা ব্যবহারকারীর ব্যবসার প্রযোজ্য নিয়ম অনুযায়ী যাচাই করতে হবে।
